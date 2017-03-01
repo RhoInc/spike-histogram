@@ -100,7 +100,7 @@ export default function onResize() {
               //Horizontal lines
                 if ([.05, .75].indexOf(quantile.probability) > -1) {
                     const rProbability = quantiles[+item + 1].probability;
-                    const rQuantile = d3.quantile(this.values.sort(), rProbability);
+                    const rQuantile = d3.quantile(this.values, rProbability);
                     const whisker = this.svg
                         .append('line')
                         .attr(

@@ -282,7 +282,7 @@ var spikeHistogram = function (webcharts) {
                     //Horizontal lines
                     if ([.05, .75].indexOf(quantile.probability) > -1) {
                         var rProbability = quantiles[+item + 1].probability;
-                        var rQuantile = d3.quantile(this.values.sort(), rProbability);
+                        var rQuantile = d3.quantile(this.values, rProbability);
                         var whisker = this.svg.append('line').attr({ 'class': 'statistic',
                             'x1': this.x(quantile.quantile),
                             'y1': this.plot_height + 4,
@@ -394,7 +394,9 @@ var spikeHistogram = function (webcharts) {
         //Create array of values.
         this.values = this.raw_data.map(function (d) {
             return +d[measure];
-        }).sort();
+        }).sort(function (a, b) {
+            return a - b;
+        });
 
         //Define x-axis domain as the range of the measure, regardless of subgrouping.
         if (!this.initialSettings.xDomain) {

@@ -19,7 +19,7 @@ export default function onInit() {
   //Create array of values.
     this.values = this.raw_data
         .map(d => +d[measure])
-        .sort();
+        .sort((a,b) => a-b);
 
   //Define x-axis domain as the range of the measure, regardless of subgrouping.
     if (!this.initialSettings.xDomain) {
