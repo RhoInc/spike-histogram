@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta
+            http-equiv = 'Content-Type'
+            content = 'text/html; charset = utf-8'>
+        <title>Paneled Spike Histogram</title>
+
+        <script type = 'text/javascript'
+            src = 'https://d3js.org/d3.v3.min.js'></script>
+        <script type = 'text/javascript'
+            src = 'https://cdn.jsdelivr.net/gh/RhoInc/webcharts/build/webcharts.js'></script>
+        <script type = 'text/javascript'
+            src = '../build/spikeHistogram.js'></script>
+
+        <link type = 'text/css'
+            rel = 'stylesheet'
+            href = 'https://cdn.jsdelivr.net/gh/RhoInc/webcharts/css/webcharts.css'>
+
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+            * {
+                font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            }
+
+            #container {
+                width: 96%;
+                margin: 0 2% 0 2%;
+            }
+            #container .chart {
+                width: 100%;
+                display: inline-block;
+            }
+            #container .chart .tooltip {
+                display: none;
+            }
+            #container .chart .tooltip.active {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = 'container'>
+            <div class = 'chart' id = ''>
+                <div class = 'header'></div>
+                <div class = 'content'></div>
+            </div>
+        </div>
+    </body>
+
+    <script type = 'text/javascript'
+        src = 'index.js'></script>
+    </script>
+</html>
